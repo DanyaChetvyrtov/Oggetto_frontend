@@ -10,7 +10,6 @@ export const Context = createContext({
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-
 root.render(
     <Context.Provider value={{ store }}>
         <App />
