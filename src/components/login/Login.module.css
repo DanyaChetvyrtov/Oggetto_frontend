@@ -75,3 +75,10 @@
   border-radius: 8px;
   padding: 5px;
 }
+
+
+.form__image{
+  width: 25vw;
+
+  min-width: 90;
+}
