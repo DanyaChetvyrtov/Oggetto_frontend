@@ -3,6 +3,8 @@ import {Route, Routes, Navigate} from "react-router-dom";
 import {publicRoutes, privateRoutes} from '../router/routes'
 import {Context} from "../index";
 import {observer} from "mobx-react-lite";
+import Navbar from "./UI/navbar/Navbar";
+import OgRoutes from "./OgRoutes";
 
 
 
@@ -19,27 +21,13 @@ const MainRouter = () => {
     return (
         store.isAuth
             ?
-            <Routes>
-                {privateRoutes.map(route =>
-                    <Route
-                        element={route.element}
-                        path={route.path}
-                        key={route.path}
-                    />
-                )};
-                <Route path="/*" element={<Navigate to="/profile" />} />
-            </Routes>
+            <>
+                <Navbar/>
+                <OgRoutes routes={privateRoutes} baseRoute={"/profile"} />
+            </>
+
             :
-            <Routes>
-                {publicRoutes.map(route =>
-                    <Route
-                        element={route.element}
-                        path={route.path}
-                        key={route.path}
-                    />
-                )};
-                <Route path="/*" element={<Navigate to="/login" />} />
-            </Routes>
+            <OgRoutes routes={publicRoutes} baseRoute={"/login"} />
     );
 };
 

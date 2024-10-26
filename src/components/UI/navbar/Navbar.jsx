@@ -10,15 +10,11 @@ export default function Navbar() {
     <nav className={cl.nav}>
       <div className={cl.navbar__content}>
         <Link className={cl.tab + " " + cl.active} to='/profile'>Профиль</Link>
-        <Link className={cl.tab} to='/login'>Логин</Link>
-        <Link className={cl.tab} to='/register'>Регистрация</Link>
+        <Link className={cl.tab} to='/events' onClick={() => store.challenges(1)}>Мероприятия</Link>
+        {store.isAdmin && 
+        <Link className={cl.tab} to='/events' onClick={() => store.challenges(1)}>Создать движ</Link>}
         <div className={cl.tab + " " + cl.logout} onClick={() => store.logout()}>Выход</div>
       </div>
     </nav>
   )
 }
-
-{/* <div className="navbar__links">
-<Link style={{margin: "0 15px",textDecoration: "none", background: "black", color: "white"}} to="/login">Login</Link>
-<Link style={{margin: "0 15px",textDecoration: "none", background: "black", color: "white"}} to="/register">Register</Link>
-</div> */}

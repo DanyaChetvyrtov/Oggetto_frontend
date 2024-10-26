@@ -25,7 +25,7 @@
 .user__info__container{
   display: flex;
 
-  border-bottom: 1px solid rgb(0, 0, 0, 0.2);
+  border-block-end: 1px solid rgb(0, 0, 0, 0.2);
 }
 
 .profile__img{

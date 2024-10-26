@@ -1,0 +1,17 @@
+
+.p-calendar {
+    background-color: #F7F7F7 !important; /* Цвет фона календаря */
+}
+
+/* Кнопки календаря (недоступные) */
+.p-button {
+    background-color: #FFD600 !important; /* Цвет активной кнопки */
+    border: none !important; /* Убрать рамку */
+    color: white !important; /* Цвет текста кнопки */
+}
+
+/* Тексты на кнопках */
+.p-button:disabled {
+    background-color: #F0F0F0 !important; /* Цвет фона для неактивных кнопок */
+    color: #A0A0A0 !important; /* Цвет текста для неактивных кнопок */
+}

@@ -6,11 +6,10 @@
 }
 
 .nav {
-  font-family: Arial, sans-serif;
+  /*font-family: Arial, sans-serif;*/
   display: flex;
-
-
   justify-content: center;
+  font-weight: 700;
 }
 
 .navbar__content {
@@ -39,6 +38,6 @@
 }
 
 .logout {
-  margin-left: auto;
+  margin-inline-start: auto;
   color: #000;
 }

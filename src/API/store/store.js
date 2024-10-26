@@ -5,8 +5,10 @@ import {API_URL} from "../http";
 
 export default class Store {
     user = {};
-    isAuth = false;
+    isAuth = true; // ! Убрать!!!
     isLoading = false;
+    isAdmin = true
+
 
     constructor() {
         makeAutoObservable(this);
@@ -57,6 +59,7 @@ export default class Store {
             const response = await AuthService.registration(name, username, password, passwordConfirmation);
 
             console.log(response.data);
+            await this.login(username, password);
         } catch (e) {
             console.log(e.response?.data?.message);
         }
@@ -89,5 +92,37 @@ export default class Store {
             this.setLoading(false);
         }
     }
+
+    cachedUser() {
+        console.log(localStorage.getItem('user'))
+        const cachedUserData = JSON.parse(localStorage.getItem('user'))
+
+        this.setUser(cachedUserData)
+        this.setAuth(true);
+
+        return JSON.parse(localStorage.getItem('user'))
+    }
+
+    async challenges(id) {
+        try {
+            // Получаем токен из localStorage
+            const accessToken = localStorage.getItem('tokenA');
+
+            // Устанавливаем заголовок с токеном
+            const response = await axios.get(`/api/v1/users/challenges/${id}`, {
+                headers: {
+                    Authorization: `Bearer ${accessToken}` // Добавляем заголовок Authorization с токеном
+                }
+            });
+
+            console.log(response.data);
+        } catch (e) {
+            // Обработка ошибок
+            console.log(e.response?.data?.message || 'Произошла ошибка при получении данных');
+        }
+    }
+
+
+
 }
 

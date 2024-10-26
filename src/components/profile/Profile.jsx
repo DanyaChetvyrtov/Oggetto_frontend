@@ -1,7 +1,7 @@
 import React, { useContext } from 'react'
 import {Context} from "../../index";
 import cl from './Profile.module.css'
-import profileImg from '../../imgs/man.png'
+import profileImg from '../../static/imgs/man.png'
 
 export default function Profile() {
   const {store} = useContext(Context);
