@@ -1,7 +1,6 @@
-// import from ;
-// import  from ;
-// import  from ;
-// import  from ;
+import Login from '../components/login/Login'
+import Register from '../components/register/Resgister'
+import Profile from '../components/profile/Profile'
 
 // export const privateRoutes = [
 //     {path: "/about", element: <About />},
@@ -9,6 +8,8 @@
 //     {path: "/posts/:id", element: <PostIdPage />}
 // ]
 
-// export const publicRoutes = [
-//     {path: "/login", element: <Login />},
-// ]
+export const publicRoutes = [
+    {path: "/login", element: <Login />},
+    {path: "/register", element: <Register />},
+    {path: "/profile", element: <Profile />}
+]

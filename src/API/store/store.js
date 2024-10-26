@@ -24,6 +24,7 @@ export default class Store {
         this.isLoading = bool;
     }
 
+
     async login(username, password) {
         try {
             const response = await AuthService.login(username, password);
@@ -31,6 +32,7 @@ export default class Store {
             localStorage.setItem('tokenA', response.data.accessToken);
             localStorage.setItem('tokenR', response.data.refreshToken);
             localStorage.setItem('username', response.data.username);
+
             this.setAuth(true);
             this.setUser(response.data);
         } catch (e) {
@@ -48,10 +50,13 @@ export default class Store {
     }
 
 
-    async registration(name,username, password, passwordConfirmation) {
+    async registration(name, username, password, passwordConfirmation) {
         try {
-            const response = await AuthService.registration(name,username, password, passwordConfirmation);
-            console.log(response);
+
+            console.log(`name ${name}\nusername ${username} \npassword ${password}passwordConf ${passwordConfirmation}`)
+            const response = await AuthService.registration(name, username, password, passwordConfirmation);
+
+            console.log(response.data);
         } catch (e) {
             console.log(e.response?.data?.message);
         }
@@ -62,6 +67,7 @@ export default class Store {
         try {
             localStorage.removeItem('tokenA');
             localStorage.removeItem('tokenR');
+            
             this.setAuth(false);
             this.setUser({});
         } catch (e) {
