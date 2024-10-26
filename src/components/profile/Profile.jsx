@@ -12,7 +12,7 @@ export default function Profile() {
         <div className={cl.user__info__container}>
           <img className={cl.profile__img} src={profileImg} alt="icon" />
           <div className={cl.user__info}>
-            <h2>Имя фамилия</h2>
+            <h2>{localStorage.getItem('username')}</h2>
             <div>Возраст: 0</div>
             <div>О себе: мб очень много текста с бд о чуваке</div>
           </div>

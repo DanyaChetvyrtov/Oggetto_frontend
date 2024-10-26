@@ -22,23 +22,15 @@ function App() {
         return <div>Загрузка...</div>;
     }
 
-    /// Заменить на !store.isAuth
-    // if (!store.isAuth) {
-    //     return (<Login />);
-    // }
-    
-
     return (
         <>
-
             <BrowserRouter>
                 <Navbar />
-
                 <MainRouter />
             </BrowserRouter>
 
-            <h1>{store.isAuth ? `Пользователь авторизован ${localStorage.getItem('username')}` : `Авторизуйтесь`}</h1>
-            <button onClick={() => store.logout()}>Выйти</button>
+            {/*<h1>{store.isAuth ? `Пользователь авторизован ${localStorage.getItem('username')}` : `Авторизуйтесь`}</h1>*/}
+            {/*<button onClick={() => store.logout()}>Выйти</button>*/}
         </>
     )
 }

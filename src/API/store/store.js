@@ -67,9 +67,9 @@ export default class Store {
         try {
             localStorage.removeItem('tokenA');
             localStorage.removeItem('tokenR');
-            
             this.setAuth(false);
             this.setUser({});
+            console.log("ВСЕ четко вышло")
         } catch (e) {
             console.log(e.response?.data?.message);
         }

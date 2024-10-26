@@ -12,7 +12,7 @@ export default function Navbar() {
         <Link className={cl.tab + " " + cl.active} to='/profile'>Профиль</Link>
         <Link className={cl.tab} to='/login'>Логин</Link>
         <Link className={cl.tab} to='/register'>Регистрация</Link>
-        <Link className={cl.tab + " " + cl.logout} to='/' onClick={() => store.logout()}>Выход</Link>
+        <div className={cl.tab + " " + cl.logout} onClick={() => store.logout()}>Выход</div>
       </div>
     </nav>
   )
