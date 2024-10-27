@@ -1,5 +1,5 @@
 import React, { useContext, useState } from 'react';
-import cl from '../../components/login/Login.module.css';
+import cl from './LogInSignIn.module.css';
 import companyLogo from '../../static/imgs/oggetto-logo_tonal-hor-eng_tonal-hor-eng.png';
 import { observer } from "mobx-react-lite";
 import { Context } from "../../index";
@@ -30,23 +30,24 @@ const Login = () => {
                     }
                 }}
             >
+                <p className={cl.errorName}>{store?.isNotValidate}</p>
                 <OgInput
                     type="text"
                     name="username"
                     id="username"
                     value={username}
-                    onChange={(event) => changeHandler(event, setUsername, setHasError)}
+                    onChange={(event) => changeHandler(event, setUsername, setHasError, "username")}
                     placeholder="Логин"
-                    style={{ borderColor: hasError.username ? "red" : null }}
+                    style={{borderColor: hasError.username ? "red" : null}}
                 />
                 <OgInput
                     type="password"
                     name="password"
                     id="password"
                     value={password}
-                    onChange={(event) => changeHandler(event, setPassword, setHasError)}
+                    onChange={(event) => changeHandler(event, setPassword, setHasError, "password")}
                     placeholder="Пароль"
-                    style={{ borderColor: hasError.password ? "red" : null }}
+                    style={{borderColor: hasError.password ? "red" : null}}
                 />
                 <div className={cl.form__btns__container}>
                     <OgButton disabled={isFormInvalid}>
@@ -54,7 +55,7 @@ const Login = () => {
                     </OgButton>
                 </div>
             </form>
-            <hr style={{ margin: "15px 0", inlineSize: "27%" }} />
+            <hr className={cl.SignInLogIn__hr} />
             <div>
                 <p>Нет аккаунта? <Link
                     className={cl.links}

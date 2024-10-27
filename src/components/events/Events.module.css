@@ -20,25 +20,33 @@
     display: flex;
     justify-content: space-between;
     gap: 15px;
+    height: 100%;
 }
 
 .user__info__container__item1st {
     width: 55%;
+    padding: 0;
+    height: auto;
 }
 
 .user__info__container__item1st__header {
     text-align: center;
+    border-block-end: 1px solid rgb(0,0,0,0.2);
+    padding-block-end: 10px;
 }
 
 .user__info__container__item2sc {
-    padding-block-start: 10px;
-    width: 35%;
+    width: 40%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .event__card {
     margin: 10px;
-    width: 100%;
+    width: 90%;
     background-color: #F7F7F7;
 
     border: 1px solid rgb(0, 0, 0, 0.2);
@@ -77,11 +85,52 @@
     border-radius: 0 0 9px 9px;
     height: 30px;
     border: 1px solid rgb(0, 0, 0, 0.2);
+    margin: 0;
+}
+
+.event__reg__btn:hover {
+    background-color: #E9CA00;
+    color: black;
 }
 
 .links {
     color: #1E90FFFF;
     position: relative;
     z-index: 10;
+}
+
+
+.user__info__content {
+    height: 95%;
+    overflow-y: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user__info__content::-webkit-scrollbar {
+    width: 7px; /* Ширина полосы прокрутки */
+}
+
+/* Цвет полосы прокрутки */
+.user__info__content::-webkit-scrollbar-track {
+    background: #F0F0F0; /* Цвет фона трека прокрутки */
+    border-radius: 5px;
+}
+
+/* D9D9D9
+F0F0F0 */
+
+/* Цвет ползунка (Scroller) */
+.user__info__content::-webkit-scrollbar-thumb {
+    background-color: #D9D9D9; /* Цвет ползунка */
+    border-radius: 10px; /* Радиус для закругленных углов */
+    border: 2px solid rgb(0, 0, 0, 0.2); /* Внутренний отступ для ползунка */
+}
+
+/* При наведении на ползунок */
+.user__info__content::-webkit-scrollbar-thumb:hover {
+    background-color: #555; /* Изменение цвета при наведении */
 }
 

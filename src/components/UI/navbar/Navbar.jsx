@@ -10,9 +10,9 @@ export default function Navbar() {
     <nav className={cl.nav}>
       <div className={cl.navbar__content}>
         <Link className={cl.tab + " " + cl.active} to='/profile'>Профиль</Link>
-        <Link className={cl.tab} to='/events' onClick={() => store.challenges(1)}>Мероприятия</Link>
-        {store.isAdmin && 
-        <Link className={cl.tab} to='/events' onClick={() => store.challenges(1)}>Создать движ</Link>}
+          <Link className={cl.tab + " " + cl.acitve} to='/events' >Мероприятия</Link>
+          {store.isAdmin &&
+              <Link className={cl.tab} to='/create-event'>Создать движ</Link>}
         <div className={cl.tab + " " + cl.logout} onClick={() => store.logout()}>Выход</div>
       </div>
     </nav>

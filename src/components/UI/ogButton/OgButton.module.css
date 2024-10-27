@@ -13,9 +13,18 @@
 }
 
 .ogBtn:hover {
-    background-color: #E9CA00;
+    background-color: #ffed09;
     color: black;
 }
+
+.ogBtn:focus {
+    outline: none;
+}
+
+.ogBtn:focus-visible {
+    border: 2px solid #ffed09;
+}
+
 
 .ogBtn:disabled {
     cursor: not-allowed;

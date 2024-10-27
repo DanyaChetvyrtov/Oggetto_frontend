@@ -10,6 +10,8 @@
 
 .OgInput:focus {
     outline: none;
-    border-color: #FFDD00;
 }
 
+.OgInput:focus-visible {
+    border: 2px solid #FFDD00;
+}

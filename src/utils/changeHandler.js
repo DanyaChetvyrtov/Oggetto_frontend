@@ -1,8 +1,8 @@
-export const changeHandler = (evt, setField, setHasError) => {
+export const changeHandler = (evt, setField, setHasError, fieldName) => {
     const value = evt.target.value;
     setField(value);
     setHasError((prev) => ({
         ...prev,
-        username: value.trim().length === 0,
+        [fieldName]: value.trim().length === 0,
     }));
 }
